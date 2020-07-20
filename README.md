@@ -14,4 +14,4 @@ nodemon
 
 - Acessar Localhost
 
-Endereço : [localhost:3000].(http://localhost:3000/)
+Endereço : [localhost:3000](http://localhost:3000/)
