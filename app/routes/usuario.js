@@ -10,9 +10,9 @@ e excluir
 */
 router.get('/', (req, res, next) => {
 
-    db("musics").then((musicas) => {
+    db("usuario").then((usuarios) => {
 
-        res.render('index', { musicas: musicas });
+        res.render('index', { usuarios: usuarios });
 
         }, next); 
 
@@ -28,7 +28,7 @@ router.get('/add', (req, res, next) => {
 //Rota de cadastro de músicas, que recebe os dados do cadastro e insere no banco de dados
 router.post('/', (req, res, next) => {
 
-    db("musics").insert(req.body).then((ids) => {
+    db("usuario").insert(req.body).then((ids) => {
 
         res.redirect('/');
 
@@ -41,11 +41,11 @@ router.get('/edit/:id', (req, res, next) => {
 
     const {id} = req.params;
     
-    db("musics").where("id", id).first().then((musica) => {
+    db("usuario").where("id", id).first().then((usuario) => {
 
-        if (!musica) { return res.send(400); }
+        if (!usuario) { return res.send(400); }
 
-        res.render("edit.njk", { musica: musica });
+        res.render("edit.njk", { usuario: usuario });
 
         }, next);
 
@@ -57,7 +57,7 @@ router.put('/edit/:id', (req, res, next) => {
     
     const {id} = req.params;
 
-    db("musics").where('id', id).update(req.body).then((result) => {
+    db("usuario").where('id', id).update(req.body).then((result) => {
 
         if (result === 0) { return res.send(400); }
 
@@ -72,7 +72,7 @@ router.delete('/delete/:id', (req, res, next) => {
 
     const {id} = req.params;
 
-    db("musics").where('id', id).delete().then((result) => {
+    db("usuario").where('id', id).delete().then((result) => {
 
         if (result === 0) { return res.send(400); }
 
