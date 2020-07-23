@@ -4,7 +4,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var expressNunjucks = require('express-nunjucks');
-var index = require('./routes/arcade');
+var index = require('./routes/musicas');
 var methodOverride = require('method-override');
 
 var app = express();
