@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 
     db("usuario").then((usuarios) => {
 
-        res.render('index', { usuarios: usuarios });
+        res.render('indexuser', { usuarios: usuarios });
 
         }, next); 
 
@@ -21,9 +21,11 @@ router.get('/', (req, res, next) => {
 // Rota de formulário de inserção de músicas
 router.get('/add', (req, res, next) => {
 
-    res.render('add'); // renderiza a pagina add.njk
+    res.render('adduser'); // renderiza a pagina add.njk
 
 });
+
+
 
 //Rota de cadastro de músicas, que recebe os dados do cadastro e insere no banco de dados
 router.post('/', (req, res, next) => {
@@ -45,7 +47,7 @@ router.get('/edit/:id', (req, res, next) => {
 
         if (!usuario) { return res.send(400); }
 
-        res.render("edit.njk", { usuario: usuario });
+        res.render("edituser.njk", { usuario: usuario });
 
         }, next);
 
