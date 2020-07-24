@@ -7,11 +7,16 @@
 npm i
 ```
 
+- Acessar pasta
+```node
+cd app
+```
+
 - Inicializar o servidor
 ```node
 nodemon
 ```
 
-- Acessar Localhost
+- Acessar Index
 
 Endereço : [localhost:3000](http://localhost:3000/)
