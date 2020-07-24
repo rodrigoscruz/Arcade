@@ -7,6 +7,11 @@
 npm i
 ```
 
+- Acessar pasta
+```node
+cd app
+```
+
 - Inicializar o servidor
 ```node
 nodemon
