@@ -17,6 +17,6 @@ cd app
 nodemon
 ```
 
-- Acessar Localhost
+- Acessar Index
 
 Endereço : [localhost:3000](http://localhost:3000/)
