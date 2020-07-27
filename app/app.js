@@ -4,7 +4,11 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var expressNunjucks = require('express-nunjucks');
-var index = require('./routes/usuario');
+var usuario = require('./routes/usuario');
+var arcade = require('./routes/arcade');
+var artigo = require('./routes/artigo');
+var criador = require('./routes/criador');
+var video = require('./routes/video');
 var methodOverride = require('method-override');
 
 var app = express();
@@ -32,7 +36,11 @@ app.use(methodOverride((req, res) => {
 
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
-app.use('/', index);
+app.use('/', arcade);
+app.use('/', artigo);
+app.use('/', criador);
+app.use('/', usuario);
+app.use('/', video);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

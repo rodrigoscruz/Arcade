@@ -8,11 +8,11 @@ Rota de acesso principal da aplicação, em que serão
 exibidas todas as músicas cadastradas, e as opções de alterar
 e excluir
 */
-router.get('/', (req, res, next) => {
+router.get('/user', (req, res, next) => {
 
     db("usuario").then((usuarios) => {
 
-        res.render('indexuser', { usuarios: usuarios });
+        res.render("index_user.njk", { usuarios: usuarios });
 
         }, next); 
 
@@ -21,18 +21,17 @@ router.get('/', (req, res, next) => {
 // Rota de formulário de inserção de músicas
 router.get('/add', (req, res, next) => {
 
-    res.render('adduser'); // renderiza a pagina add.njk
+    res.render("add_user.njk"); // renderiza a pagina add.njk
 
 });
 
 
-
 //Rota de cadastro de músicas, que recebe os dados do cadastro e insere no banco de dados
-router.post('/', (req, res, next) => {
+router.post('/user', (req, res, next) => {
 
     db("usuario").insert(req.body).then((ids) => {
 
-        res.redirect('/');
+        res.redirect('/user');
 
         }, next);
 
@@ -47,7 +46,7 @@ router.get('/edit/:id', (req, res, next) => {
 
         if (!usuario) { return res.send(400); }
 
-        res.render("edituser.njk", { usuario: usuario });
+        res.render("edit_user.njk", { usuario: usuario });
 
         }, next);
 
@@ -63,7 +62,7 @@ router.put('/edit/:id', (req, res, next) => {
 
         if (result === 0) { return res.send(400); }
 
-        res.redirect('/');
+        res.redirect('/user');
 
         }, next);
 
@@ -78,7 +77,7 @@ router.delete('/delete/:id', (req, res, next) => {
 
         if (result === 0) { return res.send(400); }
 
-        res.redirect('/');
+        res.redirect('/user');
 
     }, next);
 
