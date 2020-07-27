@@ -17,6 +17,8 @@ cd app
 nodemon
 ```
 
+- Startar Xampp ou Wamp
+
 - Acessar Index
 
-Endereço : [localhost:3000](http://localhost:3000/)
+Endereço : [localhost:3000](http://localhost:3000/home)
