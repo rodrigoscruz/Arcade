@@ -6,10 +6,7 @@
 <div class="col-md-6">
     <form action="/editartigo/{{artigo.id}}" method="post">
         <input type="hidden" name="_method" value="PUT">
-        <div class="form-group">
-            <label>Id</label>
-            <p class="form-control" id="nome" placeholder="{{artigo.id}}"></p>
-        </div>
+        
         <div class="form-group">
             <label for="id_criador">ID Criador</label>
            <input type="text" class="form-control" name="id_criador" id="id_criador" placeholder="3" value="{{artigo.id_criador}}">
