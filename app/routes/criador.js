@@ -8,7 +8,7 @@ Rota de acesso principal da aplicação, em que serão
 exibidas todas as músicas cadastradas, e as opções de alterar
 e excluir
 */
-router.get('/cria', (req, res, next) => {
+router.get('/criador', (req, res, next) => {
 
     db("criador").then((criadores) => {
 
@@ -19,7 +19,7 @@ router.get('/cria', (req, res, next) => {
 });
 
 // Rota de formulário de inserção de músicas
-router.get('/addcria', (req, res, next) => {
+router.get('/addcriador', (req, res, next) => {
 
     res.render("add_criator.njk"); // renderiza a pagina add.njk
 
@@ -27,24 +27,24 @@ router.get('/addcria', (req, res, next) => {
 
 
 //Rota de cadastro de músicas, que recebe os dados do cadastro e insere no banco de dados
-router.post('/cria', (req, res, next) => {
+router.post('/criador', (req, res, next) => {
 
     db("criador").insert(req.body).then((ids) => {
 
-        res.redirect('/cria');
+        res.redirect('/criador');
 
         }, next);
 
 });
 
 //Rota de formulário de edição de uma música
-router.get('/editcria/:id', (req, res, next) => {
+router.get('/editcriador/:id', (req, res, next) => {
 
     const {id} = req.params;
     
     db("criador").where("id", id).first().then((criador) => {
 
-        if (!criador) { return res.send(400); }
+        if (!criadordor) { return res.send(400); }
 
         res.render("edit_criator.njk", { criador: criador });
 
@@ -54,7 +54,7 @@ router.get('/editcria/:id', (req, res, next) => {
 
 //Rota de alteração dos dados de uma música
 
-router.put('/editcria/:id', (req, res, next) => {
+router.put('/editcriador/:id', (req, res, next) => {
     
     const {id} = req.params;
 
@@ -62,14 +62,14 @@ router.put('/editcria/:id', (req, res, next) => {
 
         if (result === 0) { return res.send(400); }
 
-        res.redirect('/cria');
+        res.redirect('/criador');
 
         }, next);
 
 });
 
 //Rota de exclusão de uma músicas
-router.delete('/deletecria/:id', (req, res, next) => {
+router.delete('/deletecriador/:id', (req, res, next) => {
 
     const {id} = req.params;
 
@@ -77,7 +77,7 @@ router.delete('/deletecria/:id', (req, res, next) => {
 
         if (result === 0) { return res.send(400); }
 
-        res.redirect('/cria');
+        res.redirect('/criador');
 
     }, next);
 

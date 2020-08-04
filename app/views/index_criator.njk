@@ -1,4 +1,4 @@
-{% extends "layout_cria.njk" %}
+{% extends "layout_criador.njk" %}
 {% block pagina %}
 
     <h1>Lista de Usuários</h1>
@@ -21,12 +21,12 @@
                 <td>{{criador.email}}</td>
                 <td>{{criador.senha}}</td>
                 <td>
-                    <a href="/editcria/{{criador.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/editcriador/{{criador.id}}" class="btn btn-primary">Editar</a>
                     <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form-{{criador.id}}').submit();">Excluir
                     </button>
                 </td>
 
-                <form id="logout-form-{{criador.id}}" action="/deletecria/{{criador.id}}" method="POST" class="d-none">
+                <form id="logout-form-{{criador.id}}" action="/deletecriador/{{criador.id}}" method="POST" class="d-none">
                     <input type="hidden" name="_method" value="DELETE" />
                 </form>
 

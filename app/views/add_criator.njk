@@ -1,9 +1,9 @@
-{% extends "layout_cria.njk" %}
+{% extends "layout_criador.njk" %}
 {% block pagina %}
 <h1 class="mb-4">Cadastro de Criadores</h1>
 
 <div class="col-md-6">
-    <form action="/cria" method="post">
+    <form action="/criador" method="post">
         <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" class="form-control" name="nome" id="nome" placeholder="Siclano">
@@ -46,7 +46,7 @@
 
         <button type="submit" class="btn btn-primary">Cadastrar</button>
         
-        <a href="/cria" class="btn btn-secondary">Voltar</a>
+        <a href="/criador" class="btn btn-secondary">Voltar</a>
     </form>
 </div>
 {% endblock %}

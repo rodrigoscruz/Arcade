@@ -1,10 +1,10 @@
-{% extends "layout_cria.njk" %}
+{% extends "layout_criador.njk" %}
 {% block pagina %}
 
 <h1>Atualizar Usuário</h1>
 
 <div class="col-md-6">
-    <form action="/editcria/{{criador.id}}" method="post">
+    <form action="/editcriador/{{criador.id}}" method="post">
         <input type="hidden" name="_method" value="PUT">
         
         <div class="form-group">
@@ -49,7 +49,7 @@
 
 
         <button type="submit" class="btn btn-primary">Atualizar</button>
-            <a href="/cria" class="btn btn-default">Voltar</a>
+            <a href="/criador" class="btn btn-default">Voltar</a>
         </form>
     </div>
     {% endblock %}
