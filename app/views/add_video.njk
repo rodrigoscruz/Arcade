@@ -1,26 +1,43 @@
 {% extends "layout_video.njk" %}
 {% block pagina %}
-<h1 class="mb-4">Cadastro de Criadores</h1>
+<h1 class="mb-4">Criar Vídeo</h1>
 
 <div class="col-md-6">
     <form action="/video" method="post">
         <div class="form-group">
-            <label for="id_criador">ID Criador</label>
-            <input type="text" class="form-control" name="id_criador" id="id_criador" placeholder="3">
+            <label for="id_criador">Nome do criador</label>
+            <input type="text" class="form-control" name="nome_criador" id="nome_criador" placeholder="Rodrick, Samuka...">
         </div>
         
         <div class="form-group">
-            <label for="estrelas">Link</label>
-            <input type="text" class="form-control" name="link" id="link" placeholder="siclano123">
+            <label for="estrelas">Data</label>
+            <input type="text" class="form-control" name="data" id="data" placeholder="2001-09-11">
         </div>
 
+
+        <div class="form-group">
+            <label for="estrelas">Categoria</label>
+            <input type="text" class="form-control" name="categoria" id="categoria" placeholder="Games, Tec...">
+        </div>
+
+        <div class="form-group">
+            <label for="id_criador">Título</label>
+            <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Lolzinho">
+        </div>
+        
         <div class="form-group">
             <label for="estrelas">Texto</label>
-            <input type="text" class="form-control" name="texto" id="texto" placeholder="siclaninho">
+            <input type="text" class="form-control" name="texto" id="texto" placeholder="Lolzin de boas...">
+        </div>
+
+
+        <div class="form-group">
+            <label for="estrelas">Link YouTube</label>
+            <input type="text" class="form-control" name="categoria" id="categoria" placeholder="https/youtube12asdf3">
         </div>
 
         
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button type="submit" class="btn btn-primary">Criar</button>
         
         <a href="/video" class="btn btn-secondary">Voltar</a>
     </form>
