@@ -17,11 +17,11 @@
             {% for video in videos %}
             <tr>
                 <td>{{video.id}}</td>
-                <td>{{criador.nome}}</td>
                 <td>{{video.link}}</td>
                 <td>{{video.texto}}</td>
                 <td>
                     <a href="/editvideo/{{video.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/showvideo/{{video.id}}" class="btn btn-primary">Visualizar</a>
                     <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form-{{video.id}}').submit();">Excluir
                     </button>
                 </td>

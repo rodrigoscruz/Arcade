@@ -10,7 +10,7 @@ e excluir
 */
 router.get('/artigo', (req, res, next) => {
 
-    db("artigo" || "criador").then((artigos) => {
+    db("artigo").then((artigos) => {
 
         res.render("index_artigo.njk", { artigos: artigos });
 
@@ -29,9 +29,24 @@ router.get('/addartigo', (req, res, next) => {
 //Rota de cadastro de músicas, que recebe os dados do cadastro e insere no banco de dados
 router.post('/artigo', (req, res, next) => {
 
-    db("artigo" || "criador").insert(req.body).then((ids) => {
+    db("artigo").insert(req.body).then((ids) => {
 
         res.redirect('/artigo');
+
+        }, next);
+
+});
+
+//Rota de formulário de edição de uma música
+router.get('/showartigo/:id', (req, res, next) => {
+
+    const {id} = req.params;
+    
+    db("artigo").where("id", id).first().then((artigo) => {
+
+        if (!artigo) { return res.send(400); }
+
+        res.render("show_artigo.njk", { artigo: artigo });
 
         }, next);
 

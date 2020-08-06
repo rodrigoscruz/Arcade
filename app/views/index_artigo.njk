@@ -17,11 +17,11 @@
             {% for artigo in artigos %}
             <tr>
                 <td>{{artigo.id}}</td>
-                <td>{{criador.nome}}</td>
                 <td>{{artigo.titulo}}</td>
                 <td>{{artigo.corpo}}</td>
                 <td>
                     <a href="/editartigo/{{artigo.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/showartigo/{{artigo.id}}" class="btn btn-primary">Visualizar</a>
                     <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form-{{artigo.id}}').submit();">Excluir
                     </button>
                 </td>

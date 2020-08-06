@@ -10,7 +10,7 @@ e excluir
 */
 router.get('/video', (req, res, next) => {
 
-    db("video" || "criador").then((videos) => {
+    db("video").then((videos) => {
 
         res.render("index_video.njk", { videos: videos });
 
@@ -29,9 +29,24 @@ router.get('/addvideo', (req, res, next) => {
 //Rota de cadastro de músicas, que recebe os dados do cadastro e insere no banco de dados
 router.post('/video', (req, res, next) => {
 
-    db("video" || "criador").insert(req.body).then((ids) => {
+    db("video" ).insert(req.body).then((ids) => {
 
         res.redirect('/video');
+
+        }, next);
+
+});
+
+//Rota de formulário de edição de uma música
+router.get('/showvideo/:id', (req, res, next) => {
+
+    const {id} = req.params;
+    
+    db("video").where("id", id).first().then((video) => {
+
+        if (!video) { return res.send(400); }
+
+        res.render("show_video.njk", { video: video });
 
         }, next);
 
