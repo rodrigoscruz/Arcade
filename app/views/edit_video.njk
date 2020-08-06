@@ -8,22 +8,34 @@
         <input type="hidden" name="_method" value="PUT">
        
         <div class="form-group">
-            <label for="id_criador">ID Criador</label>
-           <input type="text" class="form-control" name="id_criador" id="id_criador" placeholder="3" value="{{video.id_criador}}">
+            <label for="id_criador">Nome do criador</label>
+           <input type="text" class="form-control" name="nome_criador" id="nome_criador" placeholder="{{video.nome_criador}}" value="{{video.nome_criador}}">
         </div>
         
         <div class="form-group">
-            <label for="estrelas">Link</label>
-            <input type="text" class="form-control" name="link" id="link" placeholder="siclano123" value="{{video.link}}">
+            <label for="estrelas">Data</label>
+            <input type="text" class="form-control" name="data" id="data" placeholder="{{video.data}}" value="{{video.data}}">
+        </div>
+
+        <div class="form-group">
+            <label for="estrelas">Categoria</label>
+            <input type="text" class="form-control" name="categoria" id="categoria" placeholder="{{video.categoria}}" value="{{video.categoria}}">
+        </div>
+
+        <div class="form-group">
+            <label for="estrelas">Título</label>
+            <input type="text" class="form-control" name="titulo" id="titulo" placeholder="{{video.titulo}}" value="{{video.titulo}}">
         </div>
 
         <div class="form-group">
             <label for="estrelas">Texto</label>
-            <input type="text" class="form-control" name="texto" id="texto" placeholder="siclaninho" value="{{video.texto}}">
+            <input type="text" class="form-control" name="texto" id="texto" placeholder="{{video.texto}}" value="{{video.texto}}">
         </div>
 
-        
-
+        <div class="form-group">
+            <label for="estrelas">Link YouTube</label>
+            <input type="text" class="form-control" name="link" id="link" placeholder="{{video.link}}" value="{{video.link}}">
+        </div>
 
         <button type="submit" class="btn btn-primary">Atualizar</button>
             <a href="/video" class="btn btn-default">Voltar</a>
