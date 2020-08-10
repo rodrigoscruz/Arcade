@@ -1,24 +1,18 @@
 {% extends "layout_artigo.njk" %}
 {% block pagina %}
 
-    <div class="parent white">
-    <div class="card yellow">
-      <h3>Title - Card 1</h3>
-      <p contenteditable>Medium length description with a few more words here.</p>
-      <div class="visual pink"></div>
-    </div>
-    <div class="card yellow">
-      <h3>Title - Card 2</h3>
-      <p contenteditable>Long Description. Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-      <div class="visual blue"></div>
-    </div>
-    <div class="card yellow">
-      <h3>Title - Card 3</h3>
-      <p contenteditable>Short Description.</p>
-      <div class="visual green"></div>
+{% for artigo in artigos %}
+<div class="ex-container" style="width: 583px; height: 385px;">
+<div class="parent white">
+    <div class="card purple">
+      <h1>{{artigo.titulo}}</h1>
+      <div class="visual yellow"></div>
+      <p>{{artigo.corpo}}</p>
     </div>
   </div>
+  </div>
 
+{% endfor %}
 
     <h1>Lista de Artigos</h1>
 

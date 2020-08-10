@@ -7,25 +7,22 @@ a {
   color: #00B7FF;
 }
 
-.ex8 .parent {
-  height: auto;
+.parent {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
 }
 
-.ex8 .visual {
-  height: 100px;
-  width: 100%;
-}
-
-.ex8 .card {
+.card {
+  width: clamp(23ch, 50%, 46ch);
   display: flex;
   flex-direction: column;
+  background: lightpink;
   padding: 1rem;
-  justify-content: space-between;
 }
 
-.ex8 h3 {
-  margin: 0
-}
+.visual {
+    height: 125px;
+    width: 100%;
+    background: wheat;
+    margin: 0.5rem 0;
+  }
