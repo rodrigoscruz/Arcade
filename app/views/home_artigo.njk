@@ -1,0 +1,20 @@
+{% extends "layout.njk" %}
+{% block pagina %}
+
+
+   <h1>Lista de Artigos</h1>
+
+{% for artigo in artigos %}
+<div class="ex-container" style="width: 583px; height: 385px;">
+<div class="parent white">
+    <div class="card purple">
+      <a href="/showartigo/{{artigo.id}}">{{artigo.titulo}}</a>
+      <div class="visual yellow"></div>
+      <p>{{artigo.corpo}}</p>
+    </div>
+  </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

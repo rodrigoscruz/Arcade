@@ -36,4 +36,15 @@ CREATE TABLE `video` (
 PRIMARY KEY (`id`)
 ) ENGINE = InnoDB default charset = utf8;
 
+CREATE TABLE `podcast` (
+`id` INT NOT NULL AUTO_INCREMENT ,
+`nome_criador` VARCHAR(30) NOT NULL ,
+`data` DATE NULL ,
+`categoria` VARCHAR(30) NOT NULL ,
+`titulo` VARCHAR(30) NOT NULL ,
+`texto` VARCHAR(1000) NOT NULL ,
+`link` VARCHAR(50) NOT NULL ,
+PRIMARY KEY (`id`)
+) ENGINE = InnoDB default charset = utf8;
+
 */

@@ -37,6 +37,16 @@ router.post('/artigo', (req, res, next) => {
 
 });
 
+router.get('/homeartigo', (req, res, next) => {
+
+    db("artigo").then((artigos) => {
+
+        res.render("home_artigo.njk", { artigos: artigos });
+
+        }, next); 
+
+});
+
 //Rota de formulário de edição de uma música
 router.get('/showartigo/:id', (req, res, next) => {
 

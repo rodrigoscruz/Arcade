@@ -1,0 +1,39 @@
+{% extends "layout_podcast.njk" %}
+{% block pagina %}
+
+    <h1>Lista de Podcasts</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome criador</th>
+                <th>Link</th>
+                <th>Texto</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for podcast in podcasts %}
+            <tr>
+                <td>{{podcast.id}}</td>
+                <td>{{podcast.nome_criador}}</td>
+                <td>{{podcast.link}}</td>
+                <td>{{podcast.texto}}</td>
+                <td>
+                    <a href="/editpodcast/{{podcast.id}}" class="btn btn-primary">Editar</a>
+                    <a href="/showpodcast/{{podcast.id}}" class="btn btn-primary">Visualizar</a>
+                    <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form-{{podcast.id}}').submit();">Excluir
+                    </button>
+                </td>
+
+                <form id="logout-form-{{podcast.id}}" action="/deletepodcast/{{podcast.id}}" method="POST" class="d-none">
+                    <input type="hidden" name="_method" value="DELETE" />
+                </form>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

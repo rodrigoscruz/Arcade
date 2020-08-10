@@ -7,6 +7,7 @@ var expressNunjucks = require('express-nunjucks');
 var arcade = require('./routes/arcade');
 var artigo = require('./routes/artigo');
 var video = require('./routes/video');
+var podcast = require('./routes/podcast');
 var methodOverride = require('method-override');
 
 var app = express();
@@ -37,6 +38,7 @@ app.use(methodOverride((req, res) => {
 app.use('/', arcade);
 app.use('/', artigo);
 app.use('/', video);
+app.use('/', podcast);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

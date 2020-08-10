@@ -1,0 +1,16 @@
+{% extends "layout_podcast.njk" %}
+{% block pagina %}
+<h1 class="mb-4">{{podcast.titulo}}</h1>
+
+<div class="col-md-6">
+    
+    <h4 class="mb-4">{{podcast.data}}</h4>
+    <h4 class="mb-4">{{podcast.categoria}}</h4>
+    <h4 class="mb-4">{{podcast.texto}}</h4>
+    <h4 class="mb-4">{{podcast.nome_criador}}</h4>    
+    <a href="{{podcast.link}}">Spotify</a>
+
+    <a href="/podcast" class="btn btn-secondary">Voltar</a>
+    
+</div>
+{% endblock %}

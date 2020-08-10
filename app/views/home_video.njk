@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% block pagina %}
+
+
+   <h1>Lista de Videos</h1>
+
+{% for video in videos %}
+<div class="ex-container" style="width: 583px; height: 385px;">
+<div class="parent white">
+    <div class="card purple">
+      <h3>{{video.titulo}}</h3>
+      <div class="visual yellow"><a href="/showvideo/{{video.id}}">{{video.texto}}</a></div>
+      <p>Link YouTube:</p>
+      <a href="{{video.link}}">{{video.link}}</a>
+    </div>
+  </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

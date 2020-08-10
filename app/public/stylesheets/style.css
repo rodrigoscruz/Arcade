@@ -8,8 +8,10 @@ a {
 }
 
 .parent {
+  height: auto;
   display: grid;
-  place-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {

@@ -1,19 +1,6 @@
 {% extends "layout_artigo.njk" %}
 {% block pagina %}
 
-{% for artigo in artigos %}
-<div class="ex-container" style="width: 583px; height: 385px;">
-<div class="parent white">
-    <div class="card purple">
-      <h1>{{artigo.titulo}}</h1>
-      <div class="visual yellow"></div>
-      <p>{{artigo.corpo}}</p>
-    </div>
-  </div>
-  </div>
-
-{% endfor %}
-
     <h1>Lista de Artigos</h1>
 
     <table class="table table-striped">

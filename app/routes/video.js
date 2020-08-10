@@ -52,6 +52,16 @@ router.get('/showvideo/:id', (req, res, next) => {
 
 });
 
+router.get('/homevideo', (req, res, next) => {
+
+    db("video").then((videos) => {
+
+        res.render("home_video.njk", { videos: videos });
+
+        }, next); 
+
+});
+
 //Rota de formulário de edição de uma música
 router.get('/editvideo/:id', (req, res, next) => {
 

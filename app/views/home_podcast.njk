@@ -1,0 +1,21 @@
+{% extends "layout.njk" %}
+{% block pagina %}
+
+
+   <h1>Lista de Podcasts</h1>
+
+{% for podcast in podcasts %}
+<div class="ex-container" style="width: 583px; height: 385px;">
+<div class="parent white">
+    <div class="card purple">
+      <h3>{{podcast.titulo}}</h3>
+      <div class="visual yellow"><a href="/showpodcast/{{podcast.id}}">{{podcast.texto}}</a></div>
+      <p>Link spotify:</p>
+      <a href="{{podcast.link}}">{{podcast.link}}</a>
+    </div>
+  </div>
+  </div>
+
+{% endfor %}
+
+{% endblock %}

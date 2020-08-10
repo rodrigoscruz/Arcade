@@ -1,9 +1,9 @@
-{% extends "layout_video.njk" %}
+{% extends "layout_podcast.njk" %}
 {% block pagina %}
-<h1 class="mb-4">Criar Vídeo</h1>
+<h1 class="mb-4">Criar Podcast</h1>
 
 <div class="col-md-6">
-    <form action="/video" method="post">
+    <form action="/podcast" method="post">
         <div class="form-group">
             <label for="id_criador">Nome do criador</label>
             <input type="text" class="form-control" name="nome_criador" id="nome_criador" placeholder="Rodrick, Samuka...">
@@ -32,14 +32,14 @@
 
 
         <div class="form-group">
-            <label for="estrelas">Link YouTube</label>
-            <input type="text" class="form-control" name="link" id="link" placeholder="https/youtube12asdf3">
+            <label for="estrelas">Link Spotify</label>
+            <input type="text" class="form-control" name="link" id="link" placeholder="https/spotify12asdf3">
         </div>
 
         
         <button type="submit" class="btn btn-primary">Criar</button>
         
-        <a href="/video" class="btn btn-secondary">Voltar</a>
+        <a href="/podcast" class="btn btn-secondary">Voltar</a>
     </form>
 </div>
 {% endblock %}
