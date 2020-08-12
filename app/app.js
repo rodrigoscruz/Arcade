@@ -33,8 +33,6 @@ app.use(methodOverride((req, res) => {
 
 }));
 
-//app.use('/', indexRouter);
-//app.use('/users', usersRouter);
 app.use('/', arcade);
 app.use('/', artigo);
 app.use('/', video);
