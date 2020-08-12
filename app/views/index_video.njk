@@ -1,4 +1,4 @@
-{% extends "layout_video.njk" %}
+{% extends "layout_login.njk" %}
 {% block pagina %}
 
     <h1>Lista de Vídeos</h1>
@@ -11,6 +11,7 @@
                 <th>Link</th>
                 <th>Texto</th>
                 <th>Ações</th>
+                <th><a class="nav-link" href="/addvideo">Criar</a></th>
             </tr>
         </thead>
         <tbody>
@@ -21,8 +22,8 @@
                 <td>{{video.link}}</td>
                 <td>{{video.texto}}</td>
                 <td>
-                    <a href="/editvideo/{{video.id}}" class="btn btn-primary">Editar</a>
                     <a href="/showvideo/{{video.id}}" class="btn btn-primary">Visualizar</a>
+                    <a href="/editvideo/{{video.id}}" class="btn btn-primary">Editar</a>
                     <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form-{{video.id}}').submit();">Excluir
                     </button>
                 </td>

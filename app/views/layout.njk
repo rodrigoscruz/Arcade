@@ -12,18 +12,24 @@
 
 	<SCRIPT LANGUAGE="JAVASCRIPT" TYPE="TEXT/JAVASCRIPT">
 		
+    
 		function saySomething(message) {
 			alert(message)
       ans = prompt("Diga as:","")
 		if (ans == "kkk") {
 			alert("Dissestes ' "+ans+" ', poderás acessar como usuário.")
-      alert("Parabéns")
+      login()
 		}
 		else {
-			alert("Resposta errônea.")
-
+      if (ans != ""){
+			  alert("Resposta errônea.")
+        }
+        else{
+          alert("Não respondestes.")
+        }
+		  }
 		}
-		}
+    
 	
 		// End hiding script from older browsers -->
 	</SCRIPT>	
@@ -85,6 +91,12 @@
                       <INPUT TYPE="BUTTON" VALUE="Play" onClick="saySomething('Sabes as palavras secretas?')">
                     </li>
 
+
+                    <script>
+                    function login(){
+                      document.write("<a href=/login>login</a>")
+                    }
+                    </script>
                   </ul>
                 </div>
             </div>

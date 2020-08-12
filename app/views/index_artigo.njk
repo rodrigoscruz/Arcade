@@ -1,4 +1,4 @@
-{% extends "layout_artigo.njk" %}
+{% extends "layout_login.njk" %}
 {% block pagina %}
 
     <h1>Lista de Artigos</h1>
@@ -11,6 +11,7 @@
                 <th>Título</th>
                 <th>Texto</th>
                 <th>Ações</th>
+                <th><a class="nav-link" href="/addartigo">Criar</a></th>
             </tr>
         </thead>
         <tbody>
@@ -21,8 +22,8 @@
                 <td>{{artigo.titulo}}</td>
                 <td>{{artigo.corpo}}</td>
                 <td>
-                    <a href="/editartigo/{{artigo.id}}" class="btn btn-primary">Editar</a>
                     <a href="/showartigo/{{artigo.id}}" class="btn btn-primary">Visualizar</a>
+                    <a href="/editartigo/{{artigo.id}}" class="btn btn-primary">Editar</a>
                     <button class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form-{{artigo.id}}').submit();">Excluir
                     </button>
                 </td>
