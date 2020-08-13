@@ -12,7 +12,7 @@ router.get('/artigo', (req, res, next) => {
 
     db("artigo").then((artigos) => {
 
-        res.render("index_artigo.njk", { artigos: artigos });
+        res.render("login/index_artigo.njk", { artigos: artigos });
 
         }, next); 
 
@@ -21,7 +21,7 @@ router.get('/artigo', (req, res, next) => {
 // Rota de formulário de inserção de músicas
 router.get('/addartigo', (req, res, next) => {
 
-    res.render("add_artigo.njk"); // renderiza a pagina add.njk
+    res.render("login/add_artigo.njk"); // renderiza a pagina add.njk
 
 });
 
@@ -41,7 +41,7 @@ router.get('/homeartigo', (req, res, next) => {
 
     db("artigo").then((artigos) => {
 
-        res.render("home_artigo.njk", { artigos: artigos });
+        res.render("user/home_artigo.njk", { artigos: artigos });
 
         }, next); 
 
@@ -56,7 +56,7 @@ router.get('/showartigo/:id', (req, res, next) => {
 
         if (!artigo) { return res.send(400); }
 
-        res.render("show_artigo.njk", { artigo: artigo });
+        res.render("user/show_artigo.njk", { artigo: artigo });
 
         }, next);
 
@@ -71,7 +71,7 @@ router.get('/editartigo/:id', (req, res, next) => {
 
         if (!artigo) { return res.send(400); }
 
-        res.render("edit_artigo.njk", { artigo: artigo });
+        res.render("login/edit_artigo.njk", { artigo: artigo });
 
         }, next);
 

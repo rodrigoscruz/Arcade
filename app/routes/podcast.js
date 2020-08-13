@@ -12,7 +12,7 @@ router.get('/podcast', (req, res, next) => {
 
     db("podcast").then((podcasts) => {
 
-        res.render("index_podcast.njk", { podcasts: podcasts });
+        res.render("login/index_podcast.njk", { podcasts: podcasts });
 
         }, next); 
 
@@ -21,7 +21,7 @@ router.get('/podcast', (req, res, next) => {
 // Rota de formulário de inserção de músicas
 router.get('/addpodcast', (req, res, next) => {
 
-    res.render("add_podcast.njk"); // renderiza a pagina add.njk
+    res.render("login/add_podcast.njk"); // renderiza a pagina add.njk
 
 });
 
@@ -46,7 +46,7 @@ router.get('/showpodcast/:id', (req, res, next) => {
 
         if (!podcast) { return res.send(400); }
 
-        res.render("show_podcast.njk", { podcast: podcast });
+        res.render("user/show_podcast.njk", { podcast: podcast });
 
         }, next);
 
@@ -56,7 +56,7 @@ router.get('/homepodcast', (req, res, next) => {
 
     db("podcast").then((podcasts) => {
 
-        res.render("home_podcast.njk", { podcasts: podcasts });
+        res.render("user/home_podcast.njk", { podcasts: podcasts });
 
         }, next); 
 
@@ -71,7 +71,7 @@ router.get('/editpodcast/:id', (req, res, next) => {
 
         if (!podcast) { return res.send(400); }
 
-        res.render("edit_podcast.njk", { podcast: podcast });
+        res.render("login/edit_podcast.njk", { podcast: podcast });
 
         }, next);
 

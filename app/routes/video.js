@@ -12,7 +12,7 @@ router.get('/video', (req, res, next) => {
 
     db("video").then((videos) => {
 
-        res.render("index_video.njk", { videos: videos });
+        res.render("login/index_video.njk", { videos: videos });
 
         }, next); 
 
@@ -21,7 +21,7 @@ router.get('/video', (req, res, next) => {
 // Rota de formulário de inserção de músicas
 router.get('/addvideo', (req, res, next) => {
 
-    res.render("add_video.njk"); // renderiza a pagina add.njk
+    res.render("login/add_video.njk"); // renderiza a pagina add.njk
 
 });
 
@@ -46,7 +46,7 @@ router.get('/showvideo/:id', (req, res, next) => {
 
         if (!video) { return res.send(400); }
 
-        res.render("show_video.njk", { video: video });
+        res.render("user/show_video.njk", { video: video });
 
         }, next);
 
@@ -56,7 +56,7 @@ router.get('/homevideo', (req, res, next) => {
 
     db("video").then((videos) => {
 
-        res.render("home_video.njk", { videos: videos });
+        res.render("user/home_video.njk", { videos: videos });
 
         }, next); 
 
@@ -71,7 +71,7 @@ router.get('/editvideo/:id', (req, res, next) => {
 
         if (!video) { return res.send(400); }
 
-        res.render("edit_video.njk", { video: video });
+        res.render("login/edit_video.njk", { video: video });
 
         }, next);
 
