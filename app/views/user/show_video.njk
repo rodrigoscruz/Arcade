@@ -1,5 +1,8 @@
 {% extends "layout.njk" %}
 {% block pagina %}
+
+<div style="margin-left:15%;padding:1px 16px;height:1000px;">
+
 <h1 class="mb-4">{{video.titulo}}</h1>
 
 <div class="col-md-6">
@@ -10,5 +13,7 @@
     <h4 class="mb-4">{{video.nome_criador}}</h4>    
     <a href="{{video.link}}">YouTube</a>
     
+</div>
+
 </div>
 {% endblock %}
